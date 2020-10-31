@@ -1,0 +1,60 @@
+{% extends "layout.html "%}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/home.css') }}">
+{% endblock css %}
+{% block content %}
+
+<h2>Posts of {{ username }}. Posts({{ posts.total }})</h2>
+<div class="blog-container">
+    {% for post in posts.items %}
+
+    <div class="blog-wrapper">
+     
+        <div class="blog-top">
+            {% set biname = 'img/blog_pics/'+ post.image %}
+            {% set ainame = 'img/profile_pics/'+ post.author.image %}
+            <img src="{{url_for('static', filename=biname) }}" alt="image">
+        </div>
+        <div class="blog-main-section">
+
+
+            <div class="blog-info">
+                <h4> <a href="#">{{ post.genere }}</a></h4>
+                <span class="date">{{ post.dateposted.strftime('%Y-%m-%d') }}</span>
+            </div>
+            <div class="title">
+                <h2><a href="{{ url_for('posts.eachpost', post_id = post.id) }}">{{ post.title }}</a></h2>
+            </div>
+            <div class="blog-content">
+                <p>
+                    {{ post.content[0:120] }}
+                </p>
+            </div>
+            <div class="post-bottom">
+                <img src="{{ url_for('static', filename=ainame ) }}" alt="Writer image">
+                <h4>By <span class="author"><a href="{{ url_for('users.userposts', uname = post.author.username ) }}">{{ post.author.username }}</a></span></h4>
+            </div>
+
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+    {% for page_num in posts.iter_pages( left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+    {% if page_num %}
+        {% if page_num == posts.page %}
+        <a href="{{ url_for('users.userposts', page = page_num, uname = username ) }}" class="btn btn-primary">{{ page_num }}</a>
+        {% else %}
+        <a href="{{ url_for('users.userposts', page = page_num, uname = username) }}" class="btn btn-outline-primary">{{ page_num }}</a>
+        {% endif %}
+    {% else %}
+    ...
+    {% endif %}
+    {% endfor %}
+
+
+
+
+{% endblock %}

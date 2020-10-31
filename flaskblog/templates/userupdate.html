@@ -1,0 +1,72 @@
+{% extends "layout.html "%}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="main-wrapper">
+            {% set p_image= 'img/profile_pics/' + user.image  %}
+
+
+            <img src="{{ url_for('static', filename = p_image) }}" class="card-img-top rounded-circle ml-2 mt-2"
+                alt="profile image" style="width: 60px; height: 60px;">
+            <div class="card-body">
+                <h5 class="card-title"> Name: <span style="text-transform: uppercase;">{{ user.username }}</span></h5>
+                <h5 class="card-title"> Email: {{ user.email }}</h5>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <form action="" method="POST" class="border mt-4 p-3 mb-3" enctype="multipart/form-data">
+        <legend>User Update Form</legend>
+        {{ form.hidden_tag() }}
+        
+        <div class="form-group">
+            {{ form.username.label(class="form-control-label") }}
+            {% if form.username.errors %}
+            {{ form.username(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.username.errors %}
+                    <span>{{error}}</span>
+                {% endfor %}
+
+            </div>
+            {% else %}
+            {{ form.username(class="form-control form-control-lg")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.email.label(class="form-control-label") }}
+            {% if form.email.errors %}
+            {{ form.email(class="form-control form-control-lg is-invalid") }}
+            <div class="is-invalid">
+                {% for error in form.email.errors %}
+                <span>{{error}}</span>
+                
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.email(class="form-control form-control-lg")}}
+            {% endif %}
+        </div>
+       
+
+
+        <div class="form-group">
+            {{ form.profile_pic.label(class='form-control-label') }}
+            {{ form.profile_pic(class='form-control-file') }}
+            {% if form.profile_pic.errors %}
+            {% for error in form.profile_pic.errors%}
+            <span class="text-danger"> {{ error }}</span>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-success" )}}
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

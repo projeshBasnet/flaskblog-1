@@ -1,0 +1,519 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*---------->>>>>>>>> Navbar styling starts here */
+
+.navbar{
+    background-color: coral;
+    display: flex;
+    height: 50px;
+    position: relative;
+    padding: 0;
+}
+nav{
+    padding: 0;
+}
+.except-burger{
+    display: flex;
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+    
+.left-nav{
+    width: 60%;
+    
+}
+
+.txt{
+    border-right: .2rem solid green;
+}
+
+.left-nav>ul{
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 3rem;
+    
+}
+li{
+    list-style: none;
+
+}
+.left-nav>ul>li{
+    padding: 1px 5px;
+    margin: 0 1rem;
+
+}
+.left-nav>ul>li:hover{
+    background-color: rgb(140, 230, 221);
+    border-radius: 6px;
+
+}
+
+
+.nav-list>a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Kumbh Sans', sans-serif;
+    text-decoration: none;
+
+
+}
+.right-nav{
+    width: 40%;
+    display: flex;
+    /* background-color: chocolate; */
+    position: relative;
+
+}
+.right-nav-wrapper{
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 1rem;
+}
+.right-nav-wrapper>ul{
+    display: flex;
+    margin-right: 30px;
+}
+
+.right-nav-wrapper>ul>li{
+    padding: 1px 0px;
+    width: 4rem;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.right-nav-wrapper>ul>li:hover{
+    background-color: rgb(140, 230, 221);
+    border-radius: 6px;
+}
+#search{
+    position: relative;
+    bottom: 2px;
+    
+}
+#search>input{
+    border-radius: 8px;
+    height: 28px;
+    outline: none;
+    padding: 1px 5px;
+    width: 15rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    position: relative;
+
+
+}
+.search-btn{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-color:white;
+    border: none;
+    cursor: pointer;
+
+}
+
+.burger{
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    display: none;
+
+
+}
+.white-line{
+    width: 1.2rem;
+    height: 2px;
+    background-color: white;
+    margin-top: 2px;
+}
+/* --------->>>>>>>>>>Navbar styling ends here */
+
+
+/* Footer Section Designing */
+
+
+/* Footer styling starts here */
+footer{
+    font-family: 'Lora', serif;
+    background-color: grey;
+    color: white;
+}
+.footer-title{
+    padding: 1rem;
+
+}
+
+.footer-first-section{
+    margin-top: 12px;
+    /* background-color: thistle; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-column-gap: 1rem; */
+    margin: 2px auto;
+
+    
+
+}
+.footer-first-sub-1{
+    padding: 1rem;
+    position: relative;
+
+}
+.footer-first-sub-1>p{
+    width: 90%;
+}
+
+
+.footer-first-sub-2{
+    display: flex;
+    /* background-color: violet; */
+    position: relative;
+
+
+
+}
+.footer-first-sub-2-subtitle{
+    padding: 1rem 2rem;
+    
+
+}
+.footer-first-sub-2-benifits{
+    padding: 1rem 2rem;
+
+}
+a{
+    text-decoration: none;
+    color: aquamarine;
+
+}
+
+.footer-first-sub-3{
+    display: flex;
+    /* background-color: yellow; */
+    position: relative;
+
+}
+.footer-first-sub-3-resources{
+    padding: 1rem 2rem;
+
+
+}
+
+.footer-first-sub-3-about{
+    padding: 1rem 2rem;
+    position: absolute;
+    /* margin-left: 3rem; */
+    right: 2rem;
+}
+
+.footer-li{
+    padding: 8px 3px;
+}
+.footer-li>a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.footer-second-section{
+    display: flex;
+    /* background-color: aqua; */
+    align-items: center;
+    position: relative;
+    background-color: rgb(78, 74, 74);
+    height: 4rem;
+    font-weight: 200;
+    
+
+}
+
+.footer-second-sub-1{
+    padding: 1rem;
+
+
+}
+
+.footer-second-sub-2{
+    display: flex;
+    flex-direction: column;
+   
+    right: 0;
+    /* background-color: bisque; */
+    position: absolute;
+    right: 3rem;
+
+
+}
+.footer-second-sub-2-title{
+    padding: 2px 9px;
+    
+
+
+}
+
+.social-icons{
+    display: flex;
+
+}
+.icons{
+    padding: 2px 9px;
+    background-color: white;
+    margin-left: 2px;
+    border-radius: 4px;
+
+}
+
+
+/* Adding psuedo elements for creating a line in footer */
+
+
+.footer-first-sub-1::after{
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: yellowgreen;
+    position: absolute;
+    right: 2rem;
+    height: 12rem;
+    top: 1rem;
+}
+
+.footer-first-sub-2::after{
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: yellowgreen;
+    position: absolute;
+    right: 1rem;
+    height: 70%;
+    top: 1rem;
+}
+
+/* Psuedo class ends here */
+
+
+
+@media (min-width:770px) and (max-width:900px){
+
+    #search>input{
+        border-radius: 8px;
+        height: 28px;
+        outline: none;
+        padding: 1px 5px;
+        width: 10rem;
+    }
+
+
+    .left-nav{
+        width: 50%;
+        
+    }
+    .right-nav{
+        width: 50%;
+    }
+
+    .right-nav-wrapper>ul>li{
+        padding: 1px 0px;
+        width: 4rem;
+        margin: 0 6px;
+        text-align: center;
+    }
+
+    .footer-first-sub-1::after{
+        content: '';
+        width: 0;
+        height: 0;
+        background-color: yellowgreen;
+        position: absolute;
+        right: 2rem;
+        height: 12rem;
+        top: 1rem;
+    }
+    
+    .footer-first-sub-2::after{
+        content: '';
+        width: 0;
+        height: 0;
+        background-color: yellowgreen;
+        position: absolute;
+        right: 1rem;
+        height: 70%;
+        top: 1rem;
+    }
+
+
+}
+
+
+
+/* Adding a media query with hamburger  */
+@media only screen and (max-width:770px){
+    
+    .burger{
+        display: block;
+    }
+  
+    .navbar{
+        background-color: coral;
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+        position: relative;
+        transition: all 1s linear;
+    }
+    .except-burger{
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        
+     }
+        
+    .left-nav{
+        width: 100%;
+        opacity: 1;
+        transition: all 1.2s ease-in;
+    }
+
+    .left-nav>ul{
+        display: flex;
+        position: static;
+        flex-direction: column;
+        top: 0;
+        left: 0;        
+    }
+
+    li{
+        list-style: none;
+    
+    }
+    .left-nav>ul>li{
+        padding: 3px 5px;
+        margin: 0 1rem;
+        text-align: center;
+    
+    }
+
+    a{
+        text-decoration: none;
+    }
+    .right-nav{
+        width: 100%;
+        display: flex;
+        position: static;
+        flex-direction: column;
+        opacity: 1;
+        transition: all 1.2s ease-in;
+    }
+
+    .right-nav-wrapper{
+        display: flex;
+        position: static;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .right-nav-wrapper>ul{
+        display: flex;
+        margin: 0;
+        flex-direction: column;        
+    
+    }
+
+    .right-nav-wrapper>ul>li{
+        padding: 3px 5px;
+        margin: 0 1rem;
+        text-align: center;
+        width: auto;
+    }
+
+    #search{
+        position: relative;
+        bottom: 0;
+    }
+
+    .footer-first-sub-1::after{
+        content: '';
+        width: 0;
+        height: 0;
+        background-color: yellowgreen;
+        position: absolute;
+        right: 2rem;
+        height: 12rem;
+        top: 1rem;
+    }
+    
+    .footer-first-sub-2::after{
+        content: '';
+        width: 0;
+        height: 0;
+        background-color: yellowgreen;
+        position: absolute;
+        right: 1rem;
+        height: 70%;
+        top: 1rem;
+    }
+
+    #search>input{
+        border-radius: 8px;
+        height: 28px;
+        outline: none;
+        padding: 1px 5px;
+        width: 10rem;
+    }
+
+/* Responsive design elements styling */
+    .v-hidden-resp{
+        display: none;
+    }
+    .resp-height{
+        height: 190px;
+    }
+
+    /* Ends Responssive design  */
+
+
+    .footer-second-section{
+        display: flex;
+        flex-direction: column;
+        /* background-color: aqua; */
+        /* align-items: center; */
+        position: static;
+        background-color: rgb(78, 74, 74);
+        height: auto;
+        font-weight: 200;
+        
+    
+    }
+    .footer-second-sub-2{
+        display: flex;
+        flex-direction: column;
+       
+        /* background-color: bisque; */
+        position: static;
+        right: 0;
+    
+    
+    }
+
+}
+
+
+/* special utility class class */
+
+.text-opacity{
+    opacity: .5;
+}
+.medium-font-weight{
+    font-weight: 300;
+}
+
+
+/* special utility class ends here */

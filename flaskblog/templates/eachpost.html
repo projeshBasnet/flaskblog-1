@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/eachpost.css') }}">{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="blog-wrapper">     
+        <div class="blog-top">
+            {% set biname = 'img/blog_pics/'+ post.image %}
+            {% set ainame = 'img/profile_pics/'+ post.author.image %}
+            <img src="{{url_for('static', filename=biname) }}" alt="image">
+        </div>
+        <div class="blog-main-section">
+
+
+            <div class="blog-info">
+                <h4>{{ post.genere }}</h4>
+                <span class="date">{{ post.dateposted.strftime('%Y-%m-%d') }}</span>
+            </div>
+            <div class="title">
+                <h2>{{ post.title }}</h2>
+                <div class="author-right">
+                    {% if current_user == post.author %}
+                    <a class="btn btn-outline-info" href="{{ url_for('posts.updatepost', post_id = post.id) }}">Update Post</a>
+                    <a class="btn btn-outline-danger" href="{{ url_for('posts.deletepost', post_id = post.id)}}">Delete Post</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="blog-content">
+                <p>
+                    {{ post.content }}
+                </p>
+            </div>
+            <div class="post-bottom">
+                <img src="{{ url_for('static', filename=ainame ) }}" alt="Writer image">
+                <h4>By <span class="author">{{ post.author.username }}</span></h4>
+            </div>
+
+        </div>
+        </a></span>
+    </div>
+</div>
+{% endblock content %}

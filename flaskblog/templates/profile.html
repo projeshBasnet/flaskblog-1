@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    .card {
+        width: 50%;
+        margin: 1rem auto;
+    }
+
+    .main-wrapper {
+        display: flex;
+    }
+</style>
+{% set p_image= 'img/profile_pics/' + user.image  %}
+<div class="container">
+    <div class="card">
+        <div class="main-wrapper">
+
+            <img src="{{ url_for('static', filename = p_image) }}" class="card-img-top rounded-circle ml-2 mt-2"
+                alt="profile image" style="width: 60px; height: 60px;">
+            <div class="card-body">
+                <h5 class="card-title"> Name: <span style="text-transform: uppercase;">{{ user.username }}</span></h5>
+                <h5 class="card-title"> Email: {{ user.email }}</h5>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <a href="{{ url_for('users.updateprofile')}}" class="card-link btn btn-outline-info">Update Profile</a>
+            <a href="#" class="card-link btn btn-outline-danger">Delete User</a>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock content %}
